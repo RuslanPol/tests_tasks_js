@@ -93,27 +93,27 @@ showList(list);
 // Четвертое задание
 console.log("Четвертое задание-----------------------");
 
-function multiplicationTable(a) {
-    for (let i = 0; i <= a; i++) {
-        if (i < 1) {
-            process.stdout.write("   ");
-        } else {
-            process.stdout.write(`${i}  `);
-        }
-    }
 
-    console.log(" ");
+
+
+function multiplicationTable(a) {
+    let row = "   ";
     for (let i = 1; i <= a; i++) {
-        console.log();
-        process.stdout.write(`${i}`);
+        row += `${i}  `;
+    }
+    console.log(row);
+
+    for (let i = 1; i <= a; i++) {
+        let line = `${i}`;
         for (let j = 1; j <= a; j++) {
-            if (i * j / 10 < 1) {
-                process.stdout.write(`  ${i * j}`);
+            const mult = i * j;
+            if (mult < 10) {
+                line += `  ${mult}`;
             } else {
-                process.stdout.write(` ${i * j}`);
+                line += ` ${mult}`;
             }
         }
+        console.log(line);
     }
 }
-
 multiplicationTable(8);
